@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "449275650804",
+    "project_id": "wtmoriginal",
+    "storage_bucket": "wtmoriginal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449275650804:android:49d707afa72687e718f4a1",
+        "android_client_info": {
+          "package_name": "wtm.original"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449275650804-6jbutj3f8oq12hsuud1jrp9j1eivg26p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIr4KVCGTo3tzB8SEJlCGz8SJD3DyJe6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449275650804-6jbutj3f8oq12hsuud1jrp9j1eivg26p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
