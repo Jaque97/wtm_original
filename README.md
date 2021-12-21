@@ -12,6 +12,8 @@ Fixed many deprecated packages, few still left (splash screen?)<br>
 Added social media login buttons to login screen, will replace email sign up and with instagram.<br>
 Layout for user_home almost complete, need pricing and event description added into container.<br>
 Created djs_and_promoters, party_creation, tutorial dart files with models.<br>
+Create user_profile page with followers (https://www.youtube.com/watch?v=gSl-MoykYYk&ab_channel=JohannesMilke)<br>
+Add user_profile image that takes you to user_profile to top right of user_home_view, upcoming_events_view, party_creation, and DJ/Promoter<br>
 
 
 
@@ -26,6 +28,4 @@ Integrate the upcoming events with calender(?) or just make it containers like t
 Finish the creating a party page<br>
 Start and create the DJ/Promoter page<br>
 Tutorial - based on creating an event(?)<br>
-Create user_profile page with followers (https://www.youtube.com/watch?v=gSl-MoykYYk&ab_channel=JohannesMilke)<br>
-Add user_profile image that takes you to user_profile to top right of user_home_view, upcoming_events_view, party_creation, and DJ/Promoter<br>
 Clean up the appBars on main views.
