@@ -1,5 +1,7 @@
 import 'package:event_app/view/ui/calender/calander_view.dart';
+import 'package:event_app/view/ui/djs_and_promoters/djsandpromoters.dart';
 import 'package:event_app/view/ui/event/event_view.dart';
+import 'package:event_app/view/ui/purchase_tickets/purchase_tickets.dart';
 import 'package:event_app/view/ui/user_home/user_home_viewmodel.dart';
 import 'package:event_app/view/ui/user_joined/user_joined_view.dart';
 import 'package:event_app/view/widgets/bottom_nav_bar.dart';
@@ -26,7 +28,6 @@ class UserHomeView extends StatelessWidget {
         builder: (context, model, child) => Scaffold(
               appBar: AppBar(
                 backgroundColor: Colors.black,
-
                 centerTitle: true,
                 automaticallyImplyLeading: false,
                 actions: [
@@ -53,14 +54,19 @@ class UserHomeView extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Container(
-                          child: Align(alignment: Alignment.centerLeft,
-                              child: Image.asset('assets/logo.png')
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => UserHomeView());
+                          },
+                          child: Container(
+                            child: Align(alignment: Alignment.centerLeft,
+                                child: Image.asset('assets/logo.png')
 
+                            ),
+                            height: 150,
+                            width: 200,
+                            color: Colors.black,
                           ),
-                          height: 150,
-                          width: 200,
-                          color: Colors.black,
                         ),
                         Container(
                           child: Center(
@@ -128,7 +134,7 @@ class UserHomeView extends StatelessWidget {
                                 backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
                               ),
                               onPressed: () {
-                                Get.to(() => UserProfile());
+                                Get.to(() => DJsandPromoters());
                               },
                               child: Text('DJ/Promoter'),
                             ),
@@ -136,29 +142,182 @@ class UserHomeView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      child: Align(alignment: Alignment.topLeft,
-                          child: Image.asset('assets/SampleImage.png')
-                      ),
-                      height: 150,
-                      width: 200,
-                      color: Colors.black,
+                    Row(
+                      children: [
+                        Container(
+                          child: Align(alignment: Alignment.topLeft,
+                              child: Image.asset('assets/SampleImage.png')
+                          ),
+                          height: 150,
+                          width: 200,
+                          color: Colors.black,
+                        ),
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
+                              color: Colors.black,
+                              width: 192.7,
+                              height: 150,
+                            ),
+                            Positioned(
+                              top: 10,
+                              child: Text('Event Date - Event Time',
+                                  style: TextStyle(
+                                  color: Colors.red,
+                              ),
+                              ),
+                            ),
+                            Positioned(
+                              top: 40,
+                                child: Text('Event hosting',
+                                    style: TextStyle(
+                                    color: Colors.white,
+                                ),
+                                )),
+                            Positioned(
+                                top: 70,
+                                child: Text('Event location',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                top: 100,
+                                child: Text('Event Price',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                bottom: 5,
+                                right: 0,
+                                child: IconButton(
+                                    icon: Icon(Icons.share),
+                                    color: Colors.white,
+                                    onPressed: () {} //share to social medias
+                                )),
+                          ],
+                        ),
+                      ],
                     ),
-                    Container(
-                      child: Align(alignment: Alignment.topLeft,
-                          child: Image.asset('assets/SampleImage.png')
-                      ),
-                      height: 150,
-                      width: 200,
-                      color: Colors.black,
+                    Row(
+                      children: [
+                        Container(
+                          child: Align(alignment: Alignment.topLeft,
+                              child: Image.asset('assets/SampleImage.png')
+                          ),
+                          height: 150,
+                          width: 200,
+                          color: Colors.black,
+                        ),
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
+                              color: Colors.black,
+                              width: 192.7,
+                              height: 150,
+                            ),
+                            Positioned(
+                              top: 10,
+                              child: Text('Event Date - Event Time',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                                top: 40,
+                                child: Text('Event hosting',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                top: 70,
+                                child: Text('Event location',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                top: 100,
+                                child: Text('Event Price',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                bottom: 5,
+                                right: 0,
+                                child: IconButton(
+                                    icon: Icon(Icons.share),
+                                    color: Colors.white,
+                                    onPressed: () {} //share to social medias
+                                )),
+                          ],
+                        ),
+                      ],
                     ),
-                    Container(
-                      child: Align(alignment: Alignment.topLeft,
-                          child: Image.asset('assets/SampleImage.png')
-                      ),
-                      height: 150,
-                      width: 200,
-                      color: Colors.black,
+                    Row(
+                      children: [
+                        Container(
+                          child: Align(alignment: Alignment.topLeft,
+                              child: Image.asset('assets/SampleImage.png')
+                          ),
+                          height: 150,
+                          width: 200,
+                          color: Colors.black,
+                        ),
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
+                              color: Colors.black,
+                              width: 192.7,
+                              height: 150,
+                            ),
+                            Positioned(
+                              top: 10,
+                              child: Text('Event Date - Event Time',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                                top: 40,
+                                child: Text('Event hosting',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                top: 70,
+                                child: Text('Event location',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                top: 100,
+                                child: Text('Event Price',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                bottom: 5,
+                                right: 0,
+                                child: IconButton(
+                                    icon: Icon(Icons.share),
+                                    color: Colors.white,
+                                    onPressed: () {} //share to social medias
+                                )),
+                          ],
+                        ),
+                      ],
                     ),
                     Row(
                       children: <Widget>[
@@ -170,21 +329,58 @@ class UserHomeView extends StatelessWidget {
                           width: 200,
                           color: Colors.black,
                         ),
-                        Column( //position date and price
+                        Stack(
+                          alignment: Alignment.center,
                           children: [
                             Container(
-                              child: Text('Date'),
+                              color: Colors.black,
+                              width: 192.7,
+                              height: 150,
                             ),
-                            Container(
-                              child: Text('Event name and Price'),
+                            Positioned(
+                              top: 10,
+                              child: Text('Event Date - Event Time',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                ),
+                              ),
                             ),
+                            Positioned(
+                                top: 40,
+                                child: Text('Event hosting',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                top: 70,
+                                child: Text('Event location',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                top: 100,
+                                child: Text('Event Price',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            Positioned(
+                                bottom: 5,
+                                right: 0,
+                                child: IconButton(
+                                    icon: Icon(Icons.share),
+                                    color: Colors.white,
+                                    onPressed: () {} //share to social medias
+                                )),
                           ],
-                        )
+                        ),
                       ],
                     ),
                     Container(
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {Get.to(() => PurchaseTickets());},
                         child: Text('Purchase Tickets'),
                         style: ElevatedButton.styleFrom(primary: Colors.black),
                       ),

@@ -25,11 +25,12 @@ class _LoginViewState extends State<LoginView> {
     return ViewModelBuilder<LoginViewModel>.reactive(
         viewModelBuilder: () => LoginViewModel(),
         builder: (context, model, child) => Scaffold(
+          backgroundColor: Colors.black,
               body: ModalProgressHUD(
                 inAsyncCall: model.loading,
                 child: Column(
                   children: [
-                    //Image.asset("assets/logo.png"),
+                    //Image.asset("assets/top_image.png"),
                     Expanded(
                       child: SingleChildScrollView(
                         physics: ScrollPhysics(parent: BouncingScrollPhysics()),

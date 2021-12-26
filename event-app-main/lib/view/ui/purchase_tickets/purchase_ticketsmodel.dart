@@ -3,7 +3,7 @@ import 'package:event_app/app/locator.dart';
 import 'package:event_app/services/auth_service.dart';
 import 'package:stacked/stacked.dart';
 
-class DJsandPromotersModel extends IndexTrackingViewModel {
+class PurchaseTicketsModel extends IndexTrackingViewModel {
   AuthService authService = locator<AuthService>();
 
   void logout() {

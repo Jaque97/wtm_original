@@ -1,10 +1,13 @@
 import 'package:event_app/app/constants.dart';
 import 'package:event_app/app/locator.dart';
 import 'package:event_app/app/static_info.dart';
+import 'package:event_app/view/ui/user_profile/user_profile_model.dart';
+import 'package:event_app/view/ui/user_profile/user_profile_view.dart';
 import 'package:event_app/view/widgets/event_tab_bar.dart';
 import 'package:event_app/view/widgets/event_tile.dart';
 import 'package:event_app/view/widgets/inputfield_widget.dart';
 import 'package:event_app/view/widgets/no_event_widget.dart';
+import 'package:event_app/view/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
@@ -30,6 +33,7 @@ class _EventViewState extends State<EventView> {
 
   @override
   Widget build(BuildContext context) {
+    final user = UserPreferences.myUser;
     return ViewModelBuilder<EventViewModel>.reactive(
       viewModelBuilder: () => locator<EventViewModel>(),
       builder: (context, model, child) => Scaffold(
@@ -64,14 +68,35 @@ class _EventViewState extends State<EventView> {
                           hint: "Search Events",
                           onChange: model.onFilter,
                         ),
-                        Container(
-                          child: Align(alignment: Alignment.topLeft,
-                              child: Image.asset('assets/logo.png')
+                          Row(
+                            children: [
+                              Container(
+                                child: Align(alignment: Alignment.topLeft,
+                                    child: InkWell(
+                                        onTap: () {
+                                          Get.to(() => UserHomeView());
+                                        },
+                                        child: Image.asset('assets/logo.png'))
+                                ),
+                                height: 150,
+                                width: 230,
+                                color: Colors.black,
+                              ),
+                              Container(
+                                //child: Center(
+                                  child: ProfileWidget(
+                                      imagePath: user.imagePath,
+                                      isEdit: false,
+                                      onClicked: () async {Get.to(() => UserProfile());}
+                                  ),
+                                //),
+                                //height: 150,
+                                //width: 190,
+                                color: Colors.black,
+                              ),
+                            ],
                           ),
-                          height: 150,
-                          width: 420,
-                          color: Colors.black,
-                        ),
+
                         Container(
                           color: Colors.black,
                           child: Row(
@@ -131,8 +156,15 @@ class _EventViewState extends State<EventView> {
                           ),
                         ),
                         Container(
-                          height: 100,
+                          height: 600,
                           color: Colors.red,
+                          child: Stack(
+                            children: [
+                              Image.asset('assets/logo.png'),
+                              Container(
+                              ),
+                            ]
+                          ),
                         ),
                         if (StaticInfo.userModel.userType == "admin")
                           EventTabBar(model),

@@ -23,11 +23,12 @@ class _SignUpViewState extends State<SignUpView> {
   Widget build(BuildContext context) {
     return ViewModelBuilder<SignUpViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
+        backgroundColor: Colors.black,
         body: ModalProgressHUD(
           inAsyncCall: model.loading,
           child: Column(
             children: [
-              Image.asset("assets/top_image.png"),
+              //Image.asset("assets/top_image.png"),
               Expanded(
                 child: SingleChildScrollView(
                   physics: ScrollPhysics(parent: BouncingScrollPhysics()),
@@ -36,13 +37,19 @@ class _SignUpViewState extends State<SignUpView> {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: Get.height * 0.08,
+                          height: 70,
+                        ),
+                        Image.asset('assets/logo.png',
+                        height: 150,
+                        width: 300,),
+                        SizedBox(
+                          height: Get.height * 0.03,
                         ),
                         Center(
                           child: Text(
                             'Register',
                             style: TextStyle(
-                              color: Theme.of(context).accentColor,
+                              color: Colors.white,
                               fontSize: 24,
                               fontWeight: FontWeight.normal,
                             ),

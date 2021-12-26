@@ -19,15 +19,13 @@ import 'package:event_app/view/ui/user_profile/user_profile_view.dart';
 import 'package:event_app/view/ui/user_profile/user.dart';
 import 'package:event_app/view/ui/user_profile/user_profile_model.dart';
 
-import 'djsandpromotersmodel.dart';
-
-
-class DJsandPromoters extends StatelessWidget {
+class PurchaseTickets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = UserPreferences.myUser;
-    return ViewModelBuilder<DJsandPromotersModel>.reactive(
-      viewModelBuilder: () => DJsandPromotersModel(),
+    TextEditingController searchCon = TextEditingController();
+    return ViewModelBuilder<PurchaseTicketsModel>.reactive(
+      viewModelBuilder: () => PurchaseTicketsModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
@@ -46,51 +44,51 @@ class DJsandPromoters extends StatelessWidget {
         ),
         body:
         ListView(
-            children: <Widget>[
-              Container(
-                color: Colors.black,
-                child: InputFieldWidget(
-                  //controller: searchCon,
-                  prefixIcon: Icons.search,
-                  hint: "Search Events",
-                  //onChange: model.onFilter,
+          children: <Widget>[
+            Container(
+              color: Colors.black,
+              child: InputFieldWidget(
+                controller: searchCon,
+                prefixIcon: Icons.search,
+                hint: "Search Events",
+                //onChange: model.onFilter,
+              ),
+            ),
+            Row(
+              children: [
+                Container(
+                  child: Align(alignment: Alignment.centerLeft,
+                      child: InkWell(
+                          onTap:() {
+                            Get.to(() => UserHomeView());
+                          },
+                          child: Image.asset('assets/logo.png'))
+
+                  ),
+                  height: 150,
+                  width: 200,
+                  color: Colors.black,
                 ),
-              ),
-              Row(
-                children: [
-                  Container(
-                    child: Align(alignment: Alignment.centerLeft,
-                        child: InkWell(
-                            onTap: (){
-                              Get.to(() => UserHomeView());
-                            },
-                            child: Image.asset('assets/logo.png'))
-
+                Container(
+                  child: Center(
+                    child: ProfileWidget(
+                        imagePath: user.imagePath,
+                        isEdit: false,
+                        onClicked: () async {Get.to(() => UserProfile());}
                     ),
-                    height: 150,
-                    width: 200,
-                    color: Colors.black,
                   ),
-                  Container(
-                    child: Center(
-                      child: ProfileWidget(
-                          imagePath: user.imagePath,
-                          isEdit: false,
-                          onClicked: () async {Get.to(() => UserProfile());}
-                      ),
-                    ),
-                    height: 150,
-                    width: 192.6,
-                    color: Colors.black,
-                  ),
-                ],
-              ),
-              Container(
-                color: Colors.black,
+                  height: 150,
+                  width: 192.6,
+                  color: Colors.black,
+                ),
+              ],
+            ),
+            Container(
+              color: Colors.black,
 
 
-              )
-            ]
+            )
+]
         ),
       ),
       //     IndexedStack(

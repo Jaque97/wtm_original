@@ -25,7 +25,7 @@ class _UserProfileState extends State<UserProfile>{
         physics: BouncingScrollPhysics(),
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             child: ProfileWidget(
               imagePath: user.imagePath,
               isEdit: false,
